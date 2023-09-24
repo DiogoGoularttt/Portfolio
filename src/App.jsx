@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <div id="portfolio">
-        <h1>César Trujillo Corrêa</h1>
+        <h1> Eng. Césaro Trujillo Corrêa</h1>
         <Sidebar />
         <Maincontent />
       </div>

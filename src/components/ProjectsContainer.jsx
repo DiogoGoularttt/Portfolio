@@ -10,7 +10,7 @@ const ProjectsContainer = () => {
                 officia consectetur mollitia dolorem eius inventore omnis ex quo natus earum
                 iusto at quis commodi sint odio ad recusandae totam doloribus!
             </p>
-            <Link to="http://127.0.0.1:5500/portfolio-cesar/src/components/ProjectsPage.html" className="btn">
+            <Link to="/projetos" className="btn">
                 Ver Projetos
             </Link>
         </section>
