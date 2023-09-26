@@ -12,12 +12,14 @@
         border-radius: variables.$card-border-radius
         color: #333
         font-size: 1.3rem
+        margin-bottom: 0.5rem
         @include mixins.center
         
+        &:hover:first-child  /* Apply :hover to the first child (first link with LinkedIn icon) */
+            background: variables.$gradient
+        
+        & > svg  /* Target the svg within .social-btn */
+            color: variables.$text-color
+
     #linkedin
         color: #0072B1
-
-    :hover
-        background: variables.$gradient
-        > svg 
-            color: variables.$text-color
