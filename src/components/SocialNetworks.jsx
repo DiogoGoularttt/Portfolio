@@ -13,6 +13,7 @@ const SocialNetworks = () => {
                 <a href="https://www.linkedin.com/in/c%C3%A9saro-trujillo-corr%C3%AAa-779117160/" className='social-btn' id={network.name} key={network.name} target="_blank">
                     {network.icon}
                 </a>
+                
             ))}
         </section>      
     )
