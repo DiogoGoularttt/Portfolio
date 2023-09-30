@@ -1,32 +1,143 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import "../styles/components/ProjectsPage.sass";
-import Image1 from '../img/LTIP.png';
-import Image2 from '../img/ProjetoElétrico.png';
-import Image3 from '../img/ProjetoEstrutural.png';
-import Image4 from '../img/CoberturaEmTreliça.png';
+import Capa1 from '../img/insp_predial.png';
+import Capa2 from '../img/ProjetoElétrico.png';
+import Capa3 from '../img/ProjetoEstrutural.png';
+import Capa4 from '../img/CoberturaEmTreliça.png';
+import Img1P1 from '../img/Img1P1.png'
+import Img2P1 from '../img/Img2P1.png'
+import Img3P1 from '../img/Img3P1.png'
+import Img4P1 from '../img/Img4P1.png'
+import Img1P2 from '../img/Img1P2.png'
+import Img2P2 from '../img/Img2P2.png'
+import Img3P2 from '../img/Img3P2.png'
+import Img4P2 from '../img/Img4P2.png'
+import Img5P2 from '../img/Img5P2.png'
+import Img1P3 from '../img/Img1P3.png'
+import Img2P3 from '../img/Img2P3.png'
+import Img3P3 from '../img/Img3P3.png'
+import Img4P3 from '../img/Img4P3.png'
+
 
 Modal.setAppElement('#root');
 
 const ProjectsContainer = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [modalImages, setModalImages] = useState([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const openModal = (project) => {
     setSelectedProject(project);
+    setModalImages([project.image, project.image1, project.image2, project.image3, project.image4, project.image5]);
     setModalIsOpen(true);
   };
 
   const closeModal = () => {
     setSelectedProject(null);
+    setModalImages([]);
+    setCurrentImageIndex(0);
     setModalIsOpen(false);
   };
 
+  const nextImage = () => {
+    const newIndex = (currentImageIndex + 1) % modalImages.length;
+    setCurrentImageIndex(newIndex);
+  };
+
+  const prevImage = () => {
+    const newIndex = (currentImageIndex - 1 + modalImages.length) % modalImages.length;
+    setCurrentImageIndex(newIndex);
+  };
+
   const projects = [
-    { id: 1, image: Image1, description: 'Descrição do Projeto 1' },
-    { id: 2, image: Image2, description: 'Descrição do Projeto 2' },
-    { id: 3, image: Image3, description: 'Descrição do Projeto 3' },
-    { id: 4, image: Image4, description: 'Descrição do Projeto 4' },
+    {
+      id: 1,
+      image: Capa1,
+      title: 'LTIP – Laudo Técnico de  Inspeção Predial',
+      description: `
+      Objetivo: diagnóstico geral sobre o edifício, identificando as anomalias construtivas e falhas de manutenção.
+      
+      Objeto: Edifício Rembrandt.
+      
+      Cidade: Porto Alegre/RS.
+      
+      Uso: residencial.
+      
+      Ano: 1997.
+      
+      Capacidade: 60 pessoas;
+      
+      Ordem de Prioridade para
+      gerenciamento de risco: Método GUT`,
+      image1: Img1P1,
+      image2: Img2P1,
+      image3: Img3P1,
+      image4: Img4P1,
+    },
+    {
+      id: 2,
+      image: Capa2,
+      title: 'Projeto Elétrico',
+      description: `
+      Uma das preocupações em construir
+      uma residência é a execução correta
+      das instalações elétricas, tendo como
+      prioridade o bom funcionamento,
+      durabilidade, conforto e, principalmente,
+      a segurança.
+      Diante disto, este projeto exposto
+      obedece ao padrão rígido de normas de
+      segurança da NBR5410 - Norma
+      Brasileira para Instalações Elétricas de
+      Baixa Tensão.`,
+      image1: Img1P2,
+      image2: Img2P2,
+      image3: Img3P2,
+      image4: Img4P2,
+      image5: Img5P2
+    },
+    {
+      id: 3,
+      image: Capa3,
+      title: 'Projeto Estrutural',
+      description: `
+      O projeto estrutural em CA consiste no
+      dimensionamento de uma estrutura de
+      concreto armado, definindo a rigidez da
+      mesma, dimensões de formas, pilares,
+      vigas e lajes.
+      Para a análise de todas as variáveis
+      envolvidas, incluindo forças de vento na
+      Edificação, houve a necessidade do uso
+      dos principais softwares do mercado:
+      Autodesk Robot, Autodesk AutoCAD,
+      Ftool, Microsoft Excel.`,
+      image1: Img1P3,
+      image2: Img2P3,
+      image3: Img3P3,
+      image4: Img4P3
+    },
+    {
+      id: 4,
+      image: Capa4,
+      title: 'Cobertura em Treliça',
+      description: `
+      A adoção de cobertura em formato de
+      treliça, geralmente metálica, em um
+      projeto requer o estudo das forças de
+      veto atuantes no local onde a contrução
+      será realizada.
+      Dessa forma, para o desenvolvimento
+      deste projeto de cobertura fora utilizado
+      a NBR6123 que normatiza os  
+      procedimentos para as forças devidas ao vento em edificações.`,
+
+      // image1: OutraImagem10,
+      // image2: OutraImagem11,
+      // image3: OutraImagem12,
+    },
   ];
 
   return (
@@ -60,8 +171,9 @@ const ProjectsContainer = () => {
             margin: 'auto',
             backgroundColor: '#1d1d1d',
             border: 'none',
+            borderRadius: '10px',
             position: 'relative',
-            height: '90%', // Defina uma altura fixa para todos os modais
+            height: '83%',
           },
           overlay: {
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -85,8 +197,28 @@ const ProjectsContainer = () => {
             >
               &times;
             </button>
-            <h3>Descrição do Projeto</h3>
-            <p>{selectedProject.description}</p>
+            <div className="modal-content">
+              <div className="modal-images">
+                <img
+                  src={modalImages[currentImageIndex]}
+                  alt={`Imagem ${currentImageIndex + 1}`}
+                  className="modal-image"
+                />
+              </div>
+              <div className="modal-text">
+                <h3>{selectedProject.title}</h3>
+                <p>
+                  {selectedProject.description.split('\n').map((text, index) => (
+                    <React.Fragment key={index}>
+                      {text}
+                      <br />
+                    </React.Fragment>
+                  ))}
+                </p>
+              </div>
+            </div>
+            <button onClick={prevImage}>Anterior</button>
+            <button onClick={nextImage}>Próxima</button>
           </>
         )}
       </Modal>
@@ -95,5 +227,3 @@ const ProjectsContainer = () => {
 };
 
 export default ProjectsContainer;
-
-
