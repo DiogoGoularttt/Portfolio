@@ -18,6 +18,8 @@ import Img1P3 from '../img/Img1P3.png'
 import Img2P3 from '../img/Img2P3.png'
 import Img3P3 from '../img/Img3P3.png'
 import Img4P3 from '../img/Img4P3.png'
+import Img1P4 from '../img/Img1P4.png'
+import Img2P4 from '../img/Img2P4.png'
 
 
 Modal.setAppElement('#root');
@@ -30,10 +32,27 @@ const ProjectsContainer = () => {
 
   const openModal = (project) => {
     setSelectedProject(project);
-    setModalImages([project.image, project.image1, project.image2, project.image3, project.image4, project.image5]);
+    
+    let modalImagesArray = [];
+  
+    if (project.id === 1) {
+      // Projeto com id 1 terá quatro imagens
+      modalImagesArray.push(project.image1, project.image2, project.image3, project.image4);
+    } else if (project.id === 2) {
+      // Projeto com id 2 terá cinco imagens
+      modalImagesArray.push(project.image1, project.image2, project.image3, project.image4, project.image5);
+    } else if (project.id === 3) {
+      // Projeto com id 3 terá quatro imagens
+      modalImagesArray.push(project.image1, project.image2, project.image3, project.image4);
+    } else if (project.id === 4) {
+      // Projeto com id 4 terá duas imagens
+      modalImagesArray.push(project.image1, project.image2);
+    }
+    
+    setModalImages(modalImagesArray);
     setModalIsOpen(true);
   };
-
+  
   const closeModal = () => {
     setSelectedProject(null);
     setModalImages([]);
@@ -42,8 +61,10 @@ const ProjectsContainer = () => {
   };
 
   const nextImage = () => {
-    const newIndex = (currentImageIndex + 1) % modalImages.length;
-    setCurrentImageIndex(newIndex);
+    if (currentImageIndex < modalImages.length - 1) {
+      const newIndex = currentImageIndex + 1;
+      setCurrentImageIndex(newIndex);
+    }
   };
 
   const prevImage = () => {
@@ -134,9 +155,8 @@ const ProjectsContainer = () => {
       a NBR6123 que normatiza os  
       procedimentos para as forças devidas ao vento em edificações.`,
 
-      // image1: OutraImagem10,
-      // image2: OutraImagem11,
-      // image3: OutraImagem12,
+       image1: Img1P4,
+       image2: Img2P4,
     },
   ];
 
@@ -227,3 +247,4 @@ const ProjectsContainer = () => {
 };
 
 export default ProjectsContainer;
+
