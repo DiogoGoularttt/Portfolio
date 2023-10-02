@@ -32,9 +32,9 @@ const ProjectsContainer = () => {
 
   const openModal = (project) => {
     setSelectedProject(project);
-    
+
     let modalImagesArray = [];
-  
+
     if (project.id === 1) {
       // Projeto com id 1 terá quatro imagens
       modalImagesArray.push(project.image1, project.image2, project.image3, project.image4);
@@ -48,11 +48,11 @@ const ProjectsContainer = () => {
       // Projeto com id 4 terá duas imagens
       modalImagesArray.push(project.image1, project.image2);
     }
-    
+
     setModalImages(modalImagesArray);
     setModalIsOpen(true);
   };
-  
+
   const closeModal = () => {
     setSelectedProject(null);
     setModalImages([]);
@@ -155,8 +155,8 @@ const ProjectsContainer = () => {
       a NBR6123 que normatiza os  
       procedimentos para as forças devidas ao vento em edificações.`,
 
-       image1: Img1P4,
-       image2: Img2P4,
+      image1: Img1P4,
+      image2: Img2P4,
     },
   ];
 
@@ -182,19 +182,14 @@ const ProjectsContainer = () => {
       </div>
 
       <Modal
+        className="modal"
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Descrição do Projeto"
         style={{
-          content: {
-            maxWidth: '60%',
-            margin: 'auto',
-            backgroundColor: '#1d1d1d',
-            border: 'none',
-            borderRadius: '10px',
-            position: 'relative',
-            height: '83%',
-          },
+           content: {
+             border: 'none'
+           },
           overlay: {
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
           },
@@ -237,8 +232,10 @@ const ProjectsContainer = () => {
                 </p>
               </div>
             </div>
-            <button onClick={prevImage}>Anterior</button>
-            <button onClick={nextImage}>Próxima</button>
+            {/* <div className='btn-next'>
+              <button onClick={prevImage}>Anterior</button>
+              <button onClick={nextImage}>Próxima</button>
+            </div> */}
           </>
         )}
       </Modal>
