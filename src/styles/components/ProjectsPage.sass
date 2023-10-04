@@ -23,6 +23,17 @@
 img
   border-radius: 20px
 
+.modal-arrow
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  font-size: 36px
+  background: none
+  border: none
+  cursor: pointer
+  color: white
+  outline: none
+
 .modal
   max-width: 60%
   margin: auto
@@ -55,9 +66,15 @@ img
 .modal-text p
   line-height: 25px
 
+.btn-next
+  margin-left: 12rem
 
 
+  
+  
+  
 
+/*Versão para mobile*/
 
 @media (max-width: 768px)
   img
@@ -67,7 +84,7 @@ img
 
   .modal
     max-width: 90%
-    height: 45%
+    height: 27%
     margin: auto
     margin-top: 10rem
 
@@ -82,28 +99,51 @@ img
 
   .modal-text
     flex: 1
-    padding: 20px
+    padding: 15px
     color: white
 
-  .modal-text h3 
+  .modal-text h3
     margin-bottom: 0
-    font-size: 12px   
-    
+    font-size: 10px
 
   .modal-text p
-    line-height: 11px
-    font-size: 8px
+    line-height: 10px
+    font-size: 7.5px
+
+  .btn-next
+    margin-top: 1rem
+    margin-left: 1.1rem
+
+    
+  .btn-sm
+    
+    
+    
+    
+
+    
+
 
 
 
 /* Estilos específicos para o iPhone SE */
-@media only screen and (max-device-width: 375px) and (max-device-height: 667px) and (-webkit-min-device-pixel-ratio: 2) 
+@media only screen and (max-device-width: 375px) and (max-device-height: 667px) and (-webkit-min-device-pixel-ratio: 2)
   .modal h3
-    font-size: 8.5px
+    font-size: 8px
 
   .modal p
     font-size: 6px
-    line-height: 12px
+    line-height: 9px
 
-   
-    
+  .modal
+    height: 30%
+
+/* Estilos específicos para o Galaxy S8+ */
+@media only screen and (max-device-width: 360px) and (max-device-height: 740px) and (-webkit-min-device-pixel-ratio: 2)
+  .modal-text
+    padding: 15px
+  .modal
+    height: 35%
+
+  .modal h3
+    font-size: 9px

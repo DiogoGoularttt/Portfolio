@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import Button from '@material-ui/core/Button';
 import "../styles/components/ProjectsPage.sass";
 import Capa1 from '../img/insp_predial.png';
 import Capa2 from '../img/ProjetoElétrico.png';
@@ -61,10 +62,8 @@ const ProjectsContainer = () => {
   };
 
   const nextImage = () => {
-    if (currentImageIndex < modalImages.length - 1) {
-      const newIndex = currentImageIndex + 1;
-      setCurrentImageIndex(newIndex);
-    }
+    const newIndex = (currentImageIndex + 1 + modalImages.length) % modalImages.length;
+    setCurrentImageIndex(newIndex);
   };
 
   const prevImage = () => {
@@ -187,9 +186,9 @@ const ProjectsContainer = () => {
         onRequestClose={closeModal}
         contentLabel="Descrição do Projeto"
         style={{
-           content: {
-             border: 'none'
-           },
+          content: {
+            border: 'none'
+          },
           overlay: {
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
           },
@@ -232,10 +231,24 @@ const ProjectsContainer = () => {
                 </p>
               </div>
             </div>
-            {/* <div className='btn-next'>
-              <button onClick={prevImage}>Anterior</button>
-              <button onClick={nextImage}>Próxima</button>
-            </div> */}
+            <div className='btn-next'>
+              <Button
+                size="small"
+                onClick={prevImage}
+                className="btn-sm"
+                color="primary"
+              >
+                Anterior
+              </Button>
+              <Button
+                size="small"
+                onClick={nextImage}
+                className="btn-sm"
+                color="primary"
+              >
+                Próxima
+              </Button>
+            </div>
           </>
         )}
       </Modal>
