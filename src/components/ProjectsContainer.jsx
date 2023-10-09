@@ -163,9 +163,8 @@ const ProjectsContainer = () => {
     <section className="projects-container">
       <h2>Projetos</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus,
-        officia consectetur mollitia dolorem eius inventore omnis ex quo natus earum
-        iusto at quis commodi sint odio ad recusandae totam doloribus!
+        Nesta seção do meu portfólio, convido você a explorar uma cuidadosa seleção de projetos que ilustram minha trajetória
+        como engenheiro civil. Cada projeto representa um desafio único que abordei com dedicação e expertise.
       </p>
 
       <div className="gallery-container">
