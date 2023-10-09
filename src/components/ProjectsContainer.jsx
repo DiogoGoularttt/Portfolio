@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 import "../styles/components/ProjectsPage.sass";
 import Capa1 from '../img/insp_predial.png';
 import Capa2 from '../img/ProjetoElétrico.png';
