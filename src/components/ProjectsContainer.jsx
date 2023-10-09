@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button";
 
 // Estilos
 import '../styles/components/ProjectsPage.sass';
@@ -243,7 +243,7 @@ const ProjectsContainer = () => {
                 </p>
               </div>
             </div>
-            <div className='btn-next'>
+            {/* <div className='btn-next'>
               <Button
                 size="small"
                 onClick={prevImage}
@@ -260,7 +260,7 @@ const ProjectsContainer = () => {
               >
                 Próxima
               </Button>
-            </div>
+            </div> */}
           </>
         )}
       </Modal>
