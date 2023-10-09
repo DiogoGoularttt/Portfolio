@@ -242,24 +242,20 @@ const ProjectsContainer = () => {
                 </p>
               </div>
             </div>
-            {/* <div className='btn-next'>
-              <Button
-                size="small"
+            <div className='btn-next'>
+              <button
                 onClick={prevImage}
-                className="btn-sm"
-                color="primary"
+                className="btn-sm" 
               >
                 Anterior
-              </Button>
-              <Button
-                size="small"
+              </button>
+              <button
                 onClick={nextImage}
                 className="btn-sm"
-                color="primary"
               >
                 Próxima
-              </Button>
-            </div> */}
+              </button>
+            </div>
           </>
         )}
       </Modal>

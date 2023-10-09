@@ -69,10 +69,23 @@ img
 .btn-next
   margin-left: 12rem
 
+.btn-next button
+  padding: 3px
+  margin: 2px 2px 2px 2px
+  background-color: #fff
+  font-size: 20px
+  color: #000533
+  border-radius: 10px
+  border: none
+  cursor: pointer
+
+.btn-next button:hover
+  background-color: #000533
+  color: #fff
 
 /*Versão para mobile*/
 
-@media screen and (min-width: 320px) and (max-width: 480px) 
+@media screen and (min-width: 320px) and (max-width: 480px)
   img
     width: 150px
     height: 150px
@@ -107,8 +120,18 @@ img
     font-size: 7.5px
 
   .btn-next
-    margin-top: 1rem
-    margin-left: 1.1rem
+    margin-top: 1.5rem
+    margin-left: 3rem
+
+  .btn-next button
+    padding: 2px
+    margin: 2px 2px 2px 2px
+    background-color: #fff
+    font-size: 10px
+    color: #000533
+    border-radius: 5px
+    border: none
+    cursor: pointer
 
 /* Estilos específicos para o iPhone SE */
 @media only screen and (max-device-width: 375px) and (max-device-height: 667px) and (-webkit-min-device-pixel-ratio: 2)
@@ -122,6 +145,10 @@ img
   .modal
     height: 30%
 
+  .btn-next
+    margin-top: 2rem
+    margin-left: 3rem
+
 /* Estilos específicos para o iPhone X */
 @media only screen and (max-device-width: 375px) and (max-device-height: 812px) and (-webkit-min-device-pixel-ratio: 2)
   .modal h3
@@ -133,20 +160,19 @@ img
     width: 100%
 
   .modal
-    height: 30%
+    height: 27%
 
 /* Estilos específicos para o Galaxy S8+ */
 @media only screen and (max-device-width: 360px) and (max-device-height: 740px) and (-webkit-min-device-pixel-ratio: 2)
   .modal-text
     padding: 15px
   .modal
-    height: 35%
+    height: 30%
 
   .modal h3
     font-size: 9px
 
 /*Versão para mobile*/
-
 
 /*Versão para laptops*/
 
@@ -310,7 +336,6 @@ img
     margin-top: 1rem
     margin-left: 6rem
 
-
 @media screen and (min-width: 1600px) and (max-width: 1900px)
   img
     width: 300px
@@ -349,4 +374,3 @@ img
   .btn-next
     margin-top: 1rem
     margin-left: 12.5rem
-
