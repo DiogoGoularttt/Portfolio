@@ -1,26 +1,34 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import Button from "@material-ui/core/Button";
-import "../styles/components/ProjectsPage.sass";
+import Button from '@material-ui/core/Button';
+
+// Estilos
+import '../styles/components/ProjectsPage.sass';
+
+// Imagens da Capa
 import Capa1 from '../img/insp_predial.png';
 import Capa2 from '../img/ProjetoElétrico.png';
 import Capa3 from '../img/ProjetoEstrutural.png';
 import Capa4 from '../img/CoberturaEmTreliça.png';
-import Img1P1 from '../img/Img1P1.png'
-import Img2P1 from '../img/Img2P1.png'
-import Img3P1 from '../img/Img3P1.png'
-import Img4P1 from '../img/Img4P1.png'
-import Img1P2 from '../img/Img1P2.png'
-import Img2P2 from '../img/Img2P2.png'
-import Img3P2 from '../img/Img3P2.png'
-import Img4P2 from '../img/Img4P2.png'
-import Img5P2 from '../img/Img5P2.png'
-import Img1P3 from '../img/Img1P3.png'
-import Img2P3 from '../img/Img2P3.png'
-import Img3P3 from '../img/Img3P3.png'
-import Img4P3 from '../img/Img4P3.png'
-import Img1P4 from '../img/Img1P4.png'
-import Img2P4 from '../img/Img2P4.png'
+
+// Imagens das Páginas
+import {
+  Img1P1,
+  Img2P1,
+  Img3P1,
+  Img4P1,
+  Img1P2,
+  Img2P2,
+  Img3P2,
+  Img4P2,
+  Img5P2,
+  Img1P3,
+  Img2P3,
+  Img3P3,
+  Img4P3,
+  Img1P4,
+  Img2P4
+} from '../img';
 
 
 Modal.setAppElement('#root');
