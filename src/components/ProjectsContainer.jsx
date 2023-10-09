@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-// import Button from "@material-ui/core/Button";
 
 // Estilos
 import '../styles/components/ProjectsPage.sass';
